@@ -1,0 +1,135 @@
+:root{
+  --bg: #e0e0e0;
+  --fg: #222;
+  --accent: #f0f0f0;
+  --border: #111;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: var(--bg);
+  font-family: sans-serif;
+}
+
+input,
+button{
+  font: inherit;
+  cursor: pointer;
+  border: 3px solid var(--border);
+  box-shadow: 4px 4px 0 var(--fg);
+  background-color: var(--accent);
+  transition: all 0.1s ease-in;
+
+  &:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+}
+
+.datepicker{
+  margin-top: 3rem;
+  width: 300px;
+  position: relative;
+  display: inline-block;
+}
+
+.datepicker-input{
+  width: 100%;
+  padding: 0.5em;
+  color: var(--fg);
+  font-weight: 600;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.calendar{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+  background-color: var(--bg);
+  border: 3px solid var(--border);
+  box-shadow: 4px 4px 0 var(--fg);
+  user-select: none;
+  z-index: 10;
+  display: none;
+}
+
+.calendar header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.calendar header button {
+  display: grid;
+  place-content: center;
+  width: 2em;
+  height: 2em;
+}
+
+.month-year{
+  font-weight: bold;
+  color: var(--fg);
+}
+
+.weekdays,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  text-align: center;
+}
+
+.weekdays div {
+  font-weight: 800;
+  color: var(--fg);
+  margin-bottom: 0.25em;
+}
+
+.days div {
+  font-weight: 600;
+  padding: 0.25em;
+  margin: 0.1em;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  &:hover{
+    border-color: var(--border);
+    background-color: var(--accent);
+  }
+}
+
+.days .today {
+  background-color: var(--accent);
+  position: relative;
+
+  &::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px dotted grey;
+    pointer-events: none;
+  }
+}
