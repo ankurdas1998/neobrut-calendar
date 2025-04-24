@@ -1,4 +1,5 @@
 import { initializeDatepicker } from "./script.js";
+const baseURL = "https://cdn.jsdelivr.net/gh/ankurdas1998/neobrut-calendar";
 
 class NeoBrutDateInput extends HTMLElement {
   constructor() {
@@ -19,7 +20,7 @@ class NeoBrutDateInput extends HTMLElement {
     cal.appendChild(monthYear);
     cal.appendChild(days);
 
-    fetch("index.css")
+    fetch(`${baseURL}/index.css`)
       .then((res) => res.text())
       .then((css) => {
         const style = document.createElement("style");
