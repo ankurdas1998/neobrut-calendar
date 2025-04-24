@@ -29,7 +29,7 @@ You can directly import it via CDN:
 ```html
 <script
   type="module"
-  src="cdn.jsdelivr.net/gh/ankurdas1998/neobrut-calendar/neobrut-dateInput.js"
+  src="https://cdn.jsdelivr.net/gh/ankurdas1998/neobrut-calendar/neobrut-dateinput.js"
 ></script>
 ```
 
